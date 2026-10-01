@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -107,7 +107,7 @@ footer{text-align:center;padding:40px 20px 60px;font-size:13px;opacity:.7}
   <h1 id="h1"></h1>
   <p data-i="sub"></p>
   <div class="band"></div>
-  <svg class="lib" viewBox="0 0 400 200" aria-hidden="true"><defs><mask id="lmk" maskUnits="userSpaceOnUse" x="-4000" y="-40" width="8000" height="300"><g id="lm"></g></mask></defs><g id="lg" mask="url(#lmk)"></g><g id="lw"></g></svg>
+  <svg class="lib" viewBox="0 0 400 260" aria-hidden="true"><defs><mask id="lmk" maskUnits="userSpaceOnUse" x="-4000" y="-40" width="8000" height="340"><g id="lm"></g></mask></defs><g id="lg" mask="url(#lmk)"></g><g id="lw"></g></svg>
   <div class="hint" data-i="scroll"></div>
 </header>
 
@@ -187,7 +187,7 @@ g7:[["🦬","Зубр","Самое тяжёлое наземное животн�
 qintro:"Проверьте, что вы узнали, в пяти вопросах.",qbtn:"Квиз по Беларуси",foot:"Сделано с любовью к Беларуси 🇧🇾",
 conf:"Подтвердить ответ",next:"Следующий вопрос",fin:"Результат",again:"Играть снова",of:"Вопрос",pts:"баллов",
 ph:["Блестяще! Вы настоящий знаток Беларуси!","Отлично! Почти идеально.","Хорошо! Вы многое знаете.","Неплохо, продолжайте изучать!","Не сдавайтесь! Перечитайте и попробуйте ещё раз."]}};
-const IMG={s1:"Minsk_skyline.jpg",s3:"Kupala_Night_in_Belarus.jpg",s4:"Mir_Castle_Complex.jpg",s5:"Nesvizh_Castle.jpg",s6:"Draniki.jpg",s7:"European_bison_(Bison_bonasus).jpg",s2:"Lake_Naroch.jpg"};
+const IMG={s1:"City_of_Mir,_Belarus,_seen_from_tower_of_Mir_castle.jpg",s2:"Nesvizh_Castle.jpg",s3:"Midsummer_bonfire_closeup.jpg",s4:"Комплекс_Мирского_замка.JPG",s5:"Old_book_bindings.jpg",s6:"Potato_pancakes.jpg",s7:"European_bison_(Bison_bonasus)_male_Białowieza.jpg"};
 const EM={s1:"🇧🇾",s3:"🔥",s4:"🏰",s5:"🌺",s6:"🥔",s7:"🦬"};
 const Q=[
 {q:["What is the capital of Belarus?","Какая столица Беларуси?"],o:[["Minsk","Brest","Grodno","Vitebsk"],["Минск","Брест","Гродно","Витебск"]],a:0},
@@ -246,17 +246,18 @@ $('#qs').onclick=()=>{qi=0;sc=0;sel=-1;done=false;fin=false;$('#ov').classList.a
 $('#qx').onclick=()=>$('#ov').classList.remove('on');
 (function(){
 const L=[
-['M170 19L230 19L272 61L272 121L230 163L170 163L128 121L128 61Z',1.8,''],
-['M170 19L182 48M230 19L218 48M272 61L243 73M272 121L243 109M230 163L218 134M170 163L182 134M128 121L157 109M128 61L157 73M182 48L218 48L243 73L243 109L218 134L182 134L157 109L157 73Z',3.4,''],
-['M78 185L78 163L322 163L322 185',4.4,''],
-['M-3000 185L3400 185',5.2,'g']];
+['M160 6L248 6L303 55L308 136L253 173L152 173L95 136L96 52Z',1.8,''],
+['M152 28L253 28M160 6L152 28M248 6L253 28M152 28L98 53M253 28L303 55M152 28L152 173M253 28L253 173M152 122L253 122M95 136L152 122M308 136L253 122',3.4,''],
+['M20 148L152 156L152 246M37 166L138 164L138 246M37 166L37 246M382 148L250 156L250 246M365 166L264 164L264 246M365 166L365 246M152 178L250 178M148 186L254 186M148 186L148 246M254 186L254 246M201 186L201 246',4.4,''],
+['M-3000 246L3400 246',5.2,'g']];
 $('#lm').innerHTML=L.map(l=>`<path class="rv2" pathLength="100" style="--d:${l[1]}s" d="${l[0]}"/>`).join('');
 $('#lg').innerHTML=L.map(l=>`<path class="ln ${l[2]}" d="${l[0]}"/>`).join('');
+const R=(x,y,d)=>`<rect class="win" style="--d:${d.toFixed(2)}s" x="${(x-2.3).toFixed(1)}" y="${y-3.5}" width="4.6" height="7" rx=".5"/>`;
 let w='';
-for(let r=0;r<9;r++){const y=152-r*14;if(y<30)break;
- const half=(y<61?30+(y-19):y>121?72-(y-121):72)-12;
- for(let x=200-half+(r%2)*7;x<=200+half;x+=14)
-  w+=`<rect class="win" style="--d:${(6.6+r*.25+Math.random()*.3).toFixed(2)}s" x="${x-2.5}" y="${y-6}" width="5" height="12" rx=".6"/>`;}
+for(let r=0;r<8;r++){const y=36+r*10.5,rr=7-r;
+ for(let i=0;i<11;i++)w+=R(159+i*8.6,y,6.6+rr*.25+Math.random()*.3);}
+for(let r=0;r<5;r++){const y=70+r*10.5,rr=4-r;
+ for(const x of [112,124,136]){const d=6.8+rr*.25+Math.random()*.3;w+=R(x,y,d)+R(402-x,y,d);}}
 $('#lw').innerHTML=w;
 })();
 render();
