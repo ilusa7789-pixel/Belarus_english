@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Republic of Belarus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8e0cc;--ink:#1c2a23;--red:#b3303c;--green:#2e6a4d;--card:#f1ebdb;--line:#1c2a2333}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,serif;font-weight:600;line-height:1.1}
+#lang{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:20;background:var(--bg);color:var(--ink);border:1.5px solid var(--ink);border-radius:20px;padding:5px 13px;font:700 12px Manrope;cursor:pointer;opacity:.75}
+#lang:hover{opacity:1}
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--red);width:0;z-index:19}
+section{padding:90px 22px;max-width:880px;margin:auto;position:relative}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:60px;position:relative}
+.hero h1{font-size:clamp(46px,13vw,110px);letter-spacing:-.02em}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px);animation:up .9s forwards}
+.hero p{margin-top:18px;font-size:17px;opacity:0;animation:up 1s .9s forwards;font-style:italic;font-family:Fraunces}
+.orn{display:flex;gap:6px;margin:26px 0 0;opacity:0;animation:up 1s 1.3s forwards}
+.orn i{width:14px;height:14px;transform:rotate(45deg);background:var(--red)}.orn i:nth-child(2n){background:var(--green)}
+.hint{position:absolute;bottom:26px;font-size:13px;opacity:.6;animation:bob 2s infinite}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(8px)}}
+.fl{position:absolute;font-size:30px;opacity:.55;animation:fl 7s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-22px) rotate(10deg)}}
+.rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+.sh{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.sh b{font:600 14px Fraunces;color:var(--red);border:1.5px solid var(--red);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;flex:none}
+.sh h2{font-size:clamp(30px,8vw,48px)}
+p.t{max-width:60ch;margin-bottom:18px}
+.fs{padding-top:.5cm}
+.band{width:100vw;height:2cm;margin-top:26px;background:linear-gradient(var(--red) 0 66%,var(--green) 66% 100%);opacity:0;animation:up 1s 1.3s forwards}
+.hero{padding-bottom:60px}
+.fr{position:relative;width:calc(100vw - 1cm);margin:0 0 40px calc(50% - 50vw + .5cm);height:55svh;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,var(--green),#1f4a37);display:grid;place-items:center;padding:24px;text-align:center}
+.fr h2{position:relative;z-index:1;color:#f3ead2;font-size:clamp(40px,12vw,120px);letter-spacing:-.02em}
+.fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s,transform 8s}
+.fr img.ok{opacity:.28;transform:scale(1.07)}
+html{overflow-x:hidden}
+.hero{overflow:hidden}
+.lib{width:min(100%,440px);margin-top:34px;overflow:visible}
+.rv2{fill:none;stroke:#fff;stroke-width:14;stroke-dasharray:100;stroke-dashoffset:100;animation:draw 2.2s var(--d) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.ln{fill:none;stroke:var(--red);stroke-width:2.2;stroke-dasharray:7 7;animation:march 1.2s linear infinite}
+.ln.g{stroke:var(--ink);stroke-width:2}
+.win{fill:var(--green);opacity:0;transform-box:fill-box;transform-origin:center;animation:win 1.2s var(--d) forwards}
+@keyframes win{from{opacity:0;transform:translateY(16px)}to{opacity:.55;transform:none}}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.stat{border:1.5px solid var(--line);border-radius:14px;padding:14px;background:var(--card)}
+.stat strong{display:block;font:600 28px Fraunces;color:var(--red)}
+.stat small{font-size:13px;opacity:.8}
+.grid{display:grid;gap:12px}
+.card{background:var(--card);border-radius:16px;padding:16px 18px;border:1.5px solid transparent;transition:.35s;display:flex;gap:14px;align-items:flex-start}
+.card:hover{border-color:var(--green);transform:translateX(6px)}
+.card .e{font-size:34px;flex:none;animation:fl 6s ease-in-out infinite}
+.card h3{font-size:20px;margin-bottom:3px}
+.card p{font-size:14.5px;opacity:.85}
+.map{max-width:420px;margin:10px auto}
+.map svg{width:100%;overflow:visible}
+.dash{fill:none;stroke:var(--red);stroke-width:3;stroke-dasharray:7 7;animation:march 1.2s linear infinite}
+.fillg{fill:var(--green);opacity:0;transition:opacity 2s 2.5s}
+.map.on .fillg{opacity:.12}
+.rev{fill:none;stroke:#fff;stroke-width:14;stroke-dasharray:100;stroke-dashoffset:100}
+.map.on .rev{transition:stroke-dashoffset 3s ease-in-out;stroke-dashoffset:0}
+@keyframes march{to{stroke-dashoffset:-14}}
+.pulse{fill:var(--red);opacity:0}.map.on .pulse{opacity:1;animation:pl 2s 3s infinite}
+@keyframes pl{50%{r:9;opacity:.4}}
+.mark{overflow:hidden;white-space:nowrap;border-block:1.5px solid var(--line);padding:10px 0;font:italic 20px Fraunces}
+.mark div{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.qz{text-align:center}
+.btn{background:var(--ink);color:var(--bg);border:0;border-radius:30px;padding:14px 30px;font:700 15px Manrope;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--red);transform:scale(1.05)}
+.btn:disabled{opacity:.3;pointer-events:none}
+#ov{position:fixed;inset:0;background:#1c2a23d9;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}
+#ov.on{display:flex}
+.box{background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:24px 20px;width:100%;max-width:460px;max-height:92svh;overflow:auto;position:relative;animation:pop .5s}
+.box::before{content:"";position:absolute;inset:6px;border:1px dashed var(--red);border-radius:17px;pointer-events:none}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}
+.x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--ink);z-index:2}
+.opt{display:block;width:100%;text-align:left;margin:9px 0;padding:12px 14px;border:1.5px solid var(--ink);border-radius:12px;background:none;color:var(--ink);font:500 15px Manrope;cursor:pointer;transition:.2s}
+.opt.sel{background:var(--ink);color:var(--bg)}
+.opt.good{background:var(--green);color:#fff;border-color:var(--green)}
+.opt.bad{background:var(--red);color:#fff;border-color:var(--red)}
+.qn{font-size:13px;opacity:.7}.q{font:600 22px Fraunces;margin:6px 0 12px}
+.prog{height:4px;background:var(--line);border-radius:3px;margin-bottom:14px}.prog i{display:block;height:100%;background:var(--red);border-radius:3px;transition:.5s}
+.res{text-align:center}
+.ring{width:170px;height:170px;margin:10px auto;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .rg{stroke:var(--red);stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 2s}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font:600 48px Fraunces}
+footer{text-align:center;padding:40px 20px 60px;font-size:13px;opacity:.7}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<button id="lang" aria-label="Language">RU</button>
+
+<header class="hero">
+  <h1 id="h1"></h1>
+  <p data-i="sub"></p>
+  <div class="band"></div>
+  <svg class="lib" viewBox="0 0 400 200" aria-hidden="true"><defs><mask id="lmk" maskUnits="userSpaceOnUse" x="-4000" y="-40" width="8000" height="300"><g id="lm"></g></mask></defs><g id="lg" mask="url(#lmk)"></g><g id="lw"></g></svg>
+  <div class="hint" data-i="scroll"></div>
+</header>
+
+<div class="mark"><div id="mq"></div></div>
+
+<section id="s1"></section>
+<section id="s2" class="fs">
+  <div id="f2"></div>
+  <div class="map rv" id="map">
+    <svg viewBox="0 0 360 320" role="img" aria-label="Map outline of Belarus">
+      <defs><mask id="mk"><path class="rev" pathLength="100" d="M17 148L48 136L104 124L136 70L185 16L234 28L287 46L290 88L318 94L350 184L318 196L304 250L272 304L230 298L170 286L107 268L48 286L31 292L31 256L42 208Z"/></mask></defs>
+      <path class="fillg" d="M17 148L48 136L104 124L136 70L185 16L234 28L287 46L290 88L318 94L350 184L318 196L304 250L272 304L230 298L170 286L107 268L48 286L31 292L31 256L42 208Z"/>
+      <path class="dash" mask="url(#mk)" d="M17 148L48 136L104 124L136 70L185 16L234 28L287 46L290 88L318 94L350 184L318 196L304 250L272 304L230 298L170 286L107 268L48 286L31 292L31 256L42 208Z"/>
+      <circle class="pulse" cx="195" cy="150" r="5"/>
+      <text x="206" y="146" font-family="Fraunces" font-size="15" fill="#1c2a23" id="mn"></text>
+    </svg>
+  </div>
+  <div id="geo"></div>
+</section>
+<section id="s3"></section>
+<section id="s4"></section>
+<section id="s5"></section>
+<section id="s6"></section>
+<section id="s7"></section>
+<section id="s8" class="qz">
+  <div class="sh rv" style="justify-content:center"><b>8</b><h2 data-i="n8"></h2></div>
+  <p class="t rv" style="margin:0 auto 22px" data-i="qintro"></p>
+  <button class="btn rv" id="qs" data-i="qbtn"></button>
+</section>
+<footer data-i="foot"></footer>
+
+<div id="ov"><div class="box"><button class="x" id="qx">×</button><div id="qb"></div></div></div>
+
+<script>
+const $=s=>document.querySelector(s);
+let lang=localStorage.getItem('lang')||'en';
+const S={
+en:{title:"Republic of Belarus",sub:"A land of forests, lakes and living traditions",scroll:"Scroll down",
+n1:"General information",n2:"Geographical position",n3:"Traditions",n4:"Sights",n5:"Legends",n6:"Traditional dishes",n7:"Animals",n8:"Belarus quiz",
+mq:"Minsk ✦ Mir Castle ✦ Belovezhskaya Pushcha ✦ Lake Naroch ✦ Nesvizh ✦ Brest ✦ Polesie ✦ ",
+mn:"Minsk",
+i1:"Belarus is an Eastern European country with a long history, from the medieval Grand Duchy of Lithuania to the independent state it became in 1991. It is known for its green landscapes, hospitable people and rich folk culture.",
+f1:[["Minsk","Capital"],["9.1M","Population"],["207,600","Area, km²"],["1991","Independence"]],
+i2:"Belarus is landlocked and sits at the crossroads of Europe. It borders Poland, Lithuania, Latvia, Russia and Ukraine. The land is mostly flat, with gentle hills and vast woods.",
+g2:[["🌲","Forests","About 40% of the country is covered by forest."],["💧","Lakes and rivers","Over 10,000 lakes, and major rivers like the Dnieper, Neman and Western Dvina."],["⛰️","Highest point","Dzyarzhynskaya Hara rises just 345 m above sea level."],["🌿","Polesie","One of Europe's largest wetland regions, in the south."]],
+i3:"Belarusian traditions grow out of the farming year and old Slavic beliefs. They are kept alive in songs, crafts and festivals.",
+g3:[["🔥","Kupalle","On the night of July 6–7, people leap over bonfires, weave flower wreaths and look for the magic fern bloom."],["⭐","Kaliady","Winter carolling, when groups of singers walk from house to house with a star."],["🕯️","Dziady","Days of remembrance when families honour their ancestors."],["🧵","Slutsk sashes","Fine woven belts with bright patterns, once worn by nobles."],["🌾","Dazhynki","The harvest festival, with the last sheaf made into a wreath."]],
+i4:"From medieval castles to ancient forests, Belarus hides remarkable places.",
+g4:[["🏰","Mir Castle","A UNESCO World Heritage fortress from the 16th century with Gothic and Renaissance towers."],["👑","Nesvizh Castle","The splendid home of the Radziwiłł family, surrounded by a park and a lake."],["🌳","Belovezhskaya Pushcha","Europe's last primeval lowland forest, shared with Poland."],["🎖️","Brest Fortress","A memorial complex on the western border."],["🏙️","Minsk","A green capital of wide avenues, Soviet architecture and the Upper Town."]],
+i5:"Old tales explain the forests, rivers and ruins that people still visit today.",
+g5:[["🌺","The fern flower","Said to bloom only on Kupalle night and bring luck to whoever finds it."],["👤","The Black Lady of Nesvizh","The ghost of Barbara Radziwiłł is said to wander the castle halls."],["🏝️","The Blue Lakes","Folk stories tell how the shining lakes were born from tears or the sky itself."]],
+i6:"Belarusian cuisine is hearty and built on potatoes, grains, mushrooms and pork.",
+g6:[["🥔","Draniki","Crispy potato pancakes served with sour cream. The national favourite."],["🥩","Machanka","A thick stew of pork and sausage eaten with pancakes."],["🥟","Kalduny","Potato dumplings stuffed with meat or mushrooms."],["🥣","Kholodnik","A cold pink beetroot soup for hot summer days."],["🍰","Babka","A baked potato casserole with bacon."]],
+i7:"Forests and wetlands shelter many species, some rare across Europe.",
+g7:[["🦬","European bison","Europe's heaviest land animal. Zubr is a national symbol."],["🦢","White stork","Loved as a bringer of good luck. Nests on village roofs."],["🦌","Elk","Roams the swamps and woods across the country."],["🐺","Wolf","A shy predator of the great forests."],["🦫","Beaver","Builder of dams along the rivers."],["🐈","Lynx","A rare, silent hunter."]],
+qintro:"Test what you have learned in five questions.",qbtn:"Quiz about Belarus",foot:"Made with love for Belarus 🇧🇾",
+conf:"Confirm answer",next:"Next question",fin:"See result",again:"Play again",of:"Question",pts:"points",
+ph:["Superb! You are a true Belarus expert!","Great job! Almost perfect.","Good effort! You know quite a lot.","Not bad, keep exploring!","Keep going! Read again and try once more."]},
+ru:{title:"Республика Беларусь",sub:"Земля лесов, озёр и живых традиций",scroll:"Листайте вниз",
+n1:"Общая информация",n2:"Географическое положение",n3:"Традиции",n4:"Достопримечательности",n5:"Легенды",n6:"Традиционные блюда",n7:"Животные",n8:"Квиз по Беларуси",
+mq:"Минск ✦ Мирский замок ✦ Беловежская пуща ✦ Нарочь ✦ Несвиж ✦ Брест ✦ Полесье ✦ ",
+mn:"Минск",
+i1:"Беларусь — восточноевропейская страна с долгой историей: от Великого княжества Литовского до независимого государства с 1991 года. Она известна зелёной природой, гостеприимными людьми и богатой народной культурой.",
+f1:[["Минск","Столица"],["9,1 млн","Население"],["207 600","Площадь, км²"],["1991","Независимость"]],
+i2:"Беларусь не имеет выхода к морю и лежит на перекрёстке Европы. Граничит с Польшей, Литвой, Латвией, Россией и Украиной. Рельеф в основном равнинный, с мягкими холмами и большими лесами.",
+g2:[["🌲","Леса","Около 40% территории покрыто лесами."],["💧","Озёра и реки","Более 10 000 озёр и крупные реки: Днепр, Неман, Западная Двина."],["⛰️","Высшая точка","Гора Дзержинская — всего 345 м над уровнем моря."],["🌿","Полесье","Один из крупнейших болотных регионов Европы, на юге."]],
+i3:"Белорусские традиции выросли из земледельческого года и древних славянских верований. Они живут в песнях, ремёслах и праздниках.",
+g3:[["🔥","Купалье","В ночь на 7 июля прыгают через костры, плетут венки и ищут цветок папоротника."],["⭐","Колядки","Зимние обходы домов с песнями и звездой."],["🕯️","Дзяды","Дни памяти, когда семьи чтят предков."],["🧵","Слуцкие пояса","Тонкие тканые пояса с яркими узорами, которые носила знать."],["🌾","Дожинки","Праздник урожая, последний сноп превращают в венок."]],
+i4:"От средневековых замков до древних лесов — в Беларуси много удивительных мест.",
+g4:[["🏰","Мирский замок","Крепость XVI века из списка ЮНЕСКО с готическими и ренессансными башнями."],["👑","Несвижский замок","Роскошная резиденция Радзивиллов в окружении парка и озера."],["🌳","Беловежская пуща","Последний в Европе первобытный равнинный лес."],["🎖️","Брестская крепость","Мемориальный комплекс на западной границе."],["🏙️","Минск","Зелёная столица с широкими проспектами и Верхним городом."]],
+i5:"Старые сказания объясняют леса, реки и руины, которые люди посещают до сих пор.",
+g5:[["🌺","Цветок папоротника","Говорят, он цветёт только в ночь на Купалье и приносит счастье нашедшему."],["👤","Чёрная дама Несвижа","Призрак Барбары Радзивилл бродит по залам замка."],["🏝️","Голубые озёра","В преданиях озёра рождены слезами или самим небом."]],
+i6:"Белорусская кухня сытная: картофель, крупы, грибы и свинина.",
+g6:[["🥔","Драники","Хрустящие картофельные оладьи со сметаной. Всенародный фаворит."],["🥩","Мачанка","Густое мясное рагу со свининой и колбасой к блинам."],["🥟","Колдуны","Картофельные пельмени с мясом или грибами."],["🥣","Холодник","Холодный розовый свекольный суп для жаркого лета."],["🍰","Бабка","Запечённая картофельная запеканка с салом."]],
+i7:"Леса и болота дают приют многим видам, редким для Европы.",
+g7:[["🦬","Зубр","Самое тяжёлое наземное животное Европы и символ страны."],["🦢","Белый аист","Приносит удачу, гнездится на крышах деревень."],["🦌","Лось","Бродит по болотам и лесам по всей стране."],["🐺","Волк","Осторожный хищник больших лесов."],["🦫","Бобр","Строитель плотин на реках."],["🐈","Рысь","Редкий и бесшумный охотник."]],
+qintro:"Проверьте, что вы узнали, в пяти вопросах.",qbtn:"Квиз по Беларуси",foot:"Сделано с любовью к Беларуси 🇧🇾",
+conf:"Подтвердить ответ",next:"Следующий вопрос",fin:"Результат",again:"Играть снова",of:"Вопрос",pts:"баллов",
+ph:["Блестяще! Вы настоящий знаток Беларуси!","Отлично! Почти идеально.","Хорошо! Вы многое знаете.","Неплохо, продолжайте изучать!","Не сдавайтесь! Перечитайте и попробуйте ещё раз."]}};
+const IMG={s1:"Minsk_skyline.jpg",s3:"Kupala_Night_in_Belarus.jpg",s4:"Mir_Castle_Complex.jpg",s5:"Nesvizh_Castle.jpg",s6:"Draniki.jpg",s7:"European_bison_(Bison_bonasus).jpg",s2:"Lake_Naroch.jpg"};
+const EM={s1:"🇧🇾",s3:"🔥",s4:"🏰",s5:"🌺",s6:"🥔",s7:"🦬"};
+const Q=[
+{q:["What is the capital of Belarus?","Какая столица Беларуси?"],o:[["Minsk","Brest","Grodno","Vitebsk"],["Минск","Брест","Гродно","Витебск"]],a:0},
+{q:["Which big animal is a symbol of Belovezhskaya Pushcha?","Какое крупное животное — символ Беловежской пущи?"],o:[["Camel","European bison","Penguin","Panda"],["Верблюд","Зубр","Пингвин","Панда"]],a:1},
+{q:["What are traditional Belarusian potato pancakes called?","Как называются белорусские картофельные оладьи?"],o:[["Pelmeni","Blini","Draniki","Sushi"],["Пельмени","Блины","Драники","Суши"]],a:2},
+{q:["On which holiday do people search for the fern flower?","В какой праздник ищут цветок папоротника?"],o:[["Kupalle","Easter","Kaliady","Dziady"],["Купалье","Пасха","Колядки","Дзяды"]],a:0},
+{q:["What is the highest point of Belarus?","Какая высшая точка Беларуси?"],o:[["Elbrus","Hoverla","Dzyarzhynskaya Hara (345 m)","Mont Blanc"],["Эльбрус","Говерла","Гора Дзержинская (345 м)","Монблан"]],a:2}];
+const li=lang=>lang==='en'?0:1;
+const frame=(id,n)=>`<div class="fr rv"><img alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(IMG[id])}?width=1200" onload="this.classList.add('ok')" onerror="this.remove()"><h2>${S[lang]['n'+n]}</h2></div>`;
+function sec(id,n,key,list,extra){
+  const k=n; let h=frame(id,n)+`<p class="t rv">${S[lang]['i'+n]}</p>`;
+  $('#'+id).classList.add('fs');
+  if(extra)h+=extra;
+  h+=`<div class="grid ${list.length>4?'two':''}">`+list.map(c=>`<div class="card rv"><div class="e">${c[0]}</div><div><h3>${c[1]}</h3><p>${c[2]}</p></div></div>`).join('')+`</div>`;
+  $('#'+id).innerHTML=h;
+}
+function render(){
+  const T=S[lang];document.documentElement.lang=lang;$('#lang').textContent=lang==='en'?'RU':'EN';
+  $('#h1').innerHTML=T.title.split(' ').map((w,i)=>`<span style="animation-delay:${i*.25}s">${w}</span>`).join(' ');
+  document.title=T.title;
+  document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[e.dataset.i]);
+  $('#mq').textContent=T.mq.repeat(4);$('#mn').textContent=T.mn;
+  sec('s1',1,0,[],`<div class="stats rv">${T.f1.map(f=>`<div class="stat"><strong>${f[0]}</strong><small>${f[1]}</small></div>`).join('')}</div>`);
+  $('#s1').querySelector('.grid').remove();
+  $('#geo').innerHTML=`<p class="t rv">${T.i2}</p><div class="grid two">`+T.g2.map(c=>`<div class="card rv"><div class="e">${c[0]}</div><div><h3>${c[1]}</h3><p>${c[2]}</p></div></div>`).join('')+'</div>';
+  $('#f2').innerHTML=frame('s2',2);
+  sec('s3',3,0,T.g3);sec('s4',4,0,T.g4);sec('s5',5,0,T.g5);sec('s6',6,0,T.g6);sec('s7',7,0,T.g7);
+  watch();
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+function watch(){document.querySelectorAll('.rv:not(.on)').forEach(e=>io.observe(e))}
+addEventListener('scroll',()=>{$('#bar').style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%'});
+$('#lang').onclick=()=>{lang=lang==='en'?'ru':'en';localStorage.setItem('lang',lang);render();if($('#ov').classList.contains('on'))showQ()};
+// quiz
+let qi=0,sc=0,sel=-1,done=false,fin=false;
+function showQ(){
+  const T=S[lang],i=li(lang);
+  if(fin)return showRes();
+  const q=Q[qi];
+  $('#qb').innerHTML=`<div class="qn">${T.of} ${qi+1}/${Q.length}</div><div class="prog"><i style="width:${(qi+(done?1:0))/Q.length*100}%"></i></div><div class="q">${q.q[i]}</div>`+
+  q.o[i].map((o,k)=>`<button class="opt ${sel===k?'sel':''} ${done&&k===q.a?'good':''} ${done&&sel===k&&k!==q.a?'bad':''}" data-k="${k}">${o}</button>`).join('')+
+  `<div style="text-align:center;margin-top:14px"><button class="btn" id="go" ${sel<0?'disabled':''}>${done?(qi===Q.length-1?T.fin:T.next):T.conf}</button></div>`;
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(done)return;sel=+b.dataset.k;showQ()});
+  $('#go').onclick=()=>{
+    if(!done){done=true;if(sel===q.a)sc++;showQ()}
+    else{if(qi===Q.length-1){fin=true;showRes()}else{qi++;sel=-1;done=false;showQ()}}};
+}
+function showRes(){
+  const T=S[lang],p=sc===5?0:sc===4?1:sc===3?2:sc===2?3:4;
+  $('#qb').innerHTML=`<div class="res"><div class="ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" stroke="#1c2a2322" pathLength="100"/><circle class="rg" cx="18" cy="18" r="15.9" pathLength="100"/></svg><span id="num">0</span></div><div class="qn">${sc}/${Q.length} ${T.pts}</div><h3 style="margin:14px 0 20px;font-size:24px">${T.ph[p]}</h3><button class="btn" id="re">${T.again}</button></div>`;
+  setTimeout(()=>{$('.rg').style.strokeDashoffset=100-sc/Q.length*100},50);
+  let n=0;const t=setInterval(()=>{if(n>=sc){clearInterval(t);return}n++;$('#num').textContent=n},400);
+  $('#re').onclick=()=>{qi=0;sc=0;sel=-1;done=false;fin=false;showQ()};
+}
+$('#qs').onclick=()=>{qi=0;sc=0;sel=-1;done=false;fin=false;$('#ov').classList.add('on');showQ()};
+$('#qx').onclick=()=>$('#ov').classList.remove('on');
+(function(){
+const L=[
+['M170 19L230 19L272 61L272 121L230 163L170 163L128 121L128 61Z',1.8,''],
+['M170 19L182 48M230 19L218 48M272 61L243 73M272 121L243 109M230 163L218 134M170 163L182 134M128 121L157 109M128 61L157 73M182 48L218 48L243 73L243 109L218 134L182 134L157 109L157 73Z',3.4,''],
+['M78 185L78 163L322 163L322 185',4.4,''],
+['M-3000 185L3400 185',5.2,'g']];
+$('#lm').innerHTML=L.map(l=>`<path class="rv2" pathLength="100" style="--d:${l[1]}s" d="${l[0]}"/>`).join('');
+$('#lg').innerHTML=L.map(l=>`<path class="ln ${l[2]}" d="${l[0]}"/>`).join('');
+let w='';
+for(let r=0;r<9;r++){const y=152-r*14;if(y<30)break;
+ const half=(y<61?30+(y-19):y>121?72-(y-121):72)-12;
+ for(let x=200-half+(r%2)*7;x<=200+half;x+=14)
+  w+=`<rect class="win" style="--d:${(6.6+r*.25+Math.random()*.3).toFixed(2)}s" x="${x-2.5}" y="${y-6}" width="5" height="12" rx=".6"/>`;}
+$('#lw').innerHTML=w;
+})();
+render();
+</script>
+</body>
+</html>
